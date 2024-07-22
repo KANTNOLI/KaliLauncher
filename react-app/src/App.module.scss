@@ -1,0 +1,118 @@
+:root {
+  --color-black1: #11111e;
+  --color-black2: #21212e;
+  --color-black3: #31313e;
+  --color-black4: #41414e;
+
+  --color-Green1: #07de2a;
+  --color-Green2: #86de2a;
+  --color-Green3: #c5de2a;
+
+  --color-Yellow-1: #dbde2a;
+}
+
+.body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-black1);
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
+    height: 100vh;
+    background-color: var(--color-black2);
+
+    .toggleVer {
+      margin-top: 20px;
+      color: var(--color-Green1);
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #ffffff00;
+    }
+
+    .nav {
+      overflow-y: auto;
+      margin-top: 5vh;
+      width: 90%;
+      height: 100%;
+      background-color: var(--color-black3);
+      padding-bottom: 20px;
+
+      .activeP {
+        color: var(--color-Green1);
+      }
+      .defaultP {
+        color: var(--color-Green3);
+      }
+
+      p {
+        color: var(--color-Green3);
+        cursor: pointer;
+        font-family: "MinecraftLittle";
+        font-size: 14px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      p:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .statistic {
+    font-family: "MinecraftLittle";
+    color: var(--color-Green2);
+    position: absolute;
+    left: 26vw;
+    top: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    border-radius: 5px;
+    height: 50px;
+    background-color: var(--color-black2);
+  }
+
+  .game {
+    color: var(--color-Yellow-1);
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: calc(93vh - 80px);
+    transform: translateX(-20%);
+    width: 300px;
+    height: 80px;
+    border-radius: 5px;
+    background-color: var(--color-black3);
+  }
+
+  .game:hover {
+    opacity: 0.8;
+  }
+
+  .game:active {
+    left: calc(50%);
+    top: calc(93vh - 77px);
+    transform: translateX(-20%);
+    width: 295px;
+    height: 75px;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 5px; /* ширина scrollbar */
+}
+*::-webkit-scrollbar-track {
+  background: var(--color-black4);
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: var(--color-black1);
+}

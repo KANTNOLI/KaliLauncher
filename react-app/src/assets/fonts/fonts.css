@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "MinecraftLittle";
+  src: url("minecraft.ttf") format("truetype");
+}
+@font-face {
+  font-family: "MinecraftBig";
+  src: url("minecraft-ten-font-cyrillic.ttf") format("truetype");
+}
