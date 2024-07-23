@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+//import {Client, Authenticator} from "minecraft-launcher-core"
 import style from './App.module.scss';
 
 const KEY = "KANTNOLI"
 const KEY2 = "https://t.me/KANTNOLI"
 
 function App() {
+  //const launcher = new Client();
   const [toggleVersionData, setToggleVersionData] = useState("release")
   const toggleVersion = () => {
     setToggleVersionData(toggleVersionData === "release" ? "forge" : "release")
@@ -46,10 +48,34 @@ function App() {
       })
   }, [])
 
+  // function a() {
+  //   let opts = {
+  //     // For production launchers, I recommend not passing 
+  //     // the getAuth function through the authorization field and instead
+  //     // handling authentication outside before you initialize
+  //     // MCLC so you can handle auth based errors and validation!
+  //     authorization: Authenticator.getAuth("username", "password"),
+  //     root: "./minecraft",
+  //     version: {
+  //       number: "1.14",
+  //       type: "release"
+  //     },
+  //     memory: {
+  //       max: "6G",
+  //       min: "4G"
+  //     }
+  //   }
+
+  //   launcher.launch(opts);
+
+  //   launcher.on('debug', (e) => console.log(e));
+  //   launcher.on('data', (e) => console.log(e));
+  // }
+
 
   console.log(chooseVersion);
 
-
+  //downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version
   return (
     <div className={style.body}>
       <section className={style.panel}>
@@ -74,7 +100,12 @@ function App() {
       </section>
       <div className={style.statistic}>{`${chooseVersion.version}  ${chooseVersion.type}`}</div>
 
-      <button className={style.game}>загрузить</button>
+      <button style={{ color: downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "#07de2a" : "" }} className={style.game}>{downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "Играть" : "Загрузить"}</button>
+      {downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "" :
+        <p className={style.loading}><p className={style.loading2}></p></p>}
+
+
+      <a href="https://t.me/KANTNOLI">KANTNOLI</a>
     </div>
   );
 }

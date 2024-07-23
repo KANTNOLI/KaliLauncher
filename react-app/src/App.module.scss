@@ -91,6 +91,8 @@
     height: 80px;
     border-radius: 5px;
     background-color: var(--color-black3);
+
+    transition: .2s ease-in-out;
   }
 
   .game:hover {
@@ -103,6 +105,30 @@
     transform: translateX(-20%);
     width: 295px;
     height: 75px;
+  }
+
+  a{
+    font-size: 10px;
+    color: var(--color-black2);
+    text-decoration: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .loading{
+    left: 27vw;
+    position: absolute;
+    bottom: 5px;
+    width: 70%;
+    height: 5px;
+    background-color: var(--color-black3);
+  }
+
+  .loading2{
+    width: 100px;
+    height: 5px;
+    background-color: var(--color-Green1);
   }
 }
 
