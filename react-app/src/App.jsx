@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-//import {Client, Authenticator} from "minecraft-launcher-core"
 import style from './App.module.scss';
 
 const KEY = "KANTNOLI"
@@ -48,34 +47,9 @@ function App() {
       })
   }, [])
 
-  // function a() {
-  //   let opts = {
-  //     // For production launchers, I recommend not passing 
-  //     // the getAuth function through the authorization field and instead
-  //     // handling authentication outside before you initialize
-  //     // MCLC so you can handle auth based errors and validation!
-  //     authorization: Authenticator.getAuth("username", "password"),
-  //     root: "./minecraft",
-  //     version: {
-  //       number: "1.14",
-  //       type: "release"
-  //     },
-  //     memory: {
-  //       max: "6G",
-  //       min: "4G"
-  //     }
-  //   }
-
-  //   launcher.launch(opts);
-
-  //   launcher.on('debug', (e) => console.log(e));
-  //   launcher.on('data', (e) => console.log(e));
-  // }
-
 
   console.log(chooseVersion);
 
-  //downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version
   return (
     <div className={style.body}>
       <section className={style.panel}>
