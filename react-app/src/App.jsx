@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import style from './App.module.scss';
 
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:3001');
+
 const KEY = "KANTNOLI"
 const KEY2 = "https://t.me/KANTNOLI"
 
@@ -28,6 +31,10 @@ function App() {
 
 
   useEffect(() => {
+    socket.on('download', (data) => {
+      console.log('Сообщение от сервера:', data);
+    });
+
     if (localStorage.getItem(KEY)) {
       setDownloads(JSON.parse(localStorage.getItem(KEY)))
     }
@@ -46,6 +53,19 @@ function App() {
         setVersionsForge(Object.keys(versions.result[0]))
       })
   }, [])
+
+
+  const a = () => {
+    socket.emit("message", JSON.stringify({
+      username: "username",
+      password: "password",
+      root: "root",
+      version: "version",
+      type: "type",
+      memoryMax: "memoryMax",
+      memoryMin: "memoryMin"
+    }));
+  }
 
 
   console.log(chooseVersion);
@@ -74,7 +94,7 @@ function App() {
       </section>
       <div className={style.statistic}>{`${chooseVersion.version}  ${chooseVersion.type}`}</div>
 
-      <button style={{ color: downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "#07de2a" : "" }} className={style.game}>{downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "Играть" : "Загрузить"}</button>
+      <button onClick={() => a()} style={{ color: downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "#07de2a" : "" }} className={style.game}>{downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "Играть" : "Загрузить"}</button>
       {downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "" :
         <p className={style.loading}><p className={style.loading2}></p></p>}
 

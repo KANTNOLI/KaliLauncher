@@ -13,6 +13,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "minecraft-launcher-core": "^3.18.1",
     "nodemon": "^3.1.4",
     "pg-promise": "^11.9.1",
     "socket.io": "^4.7.5"
