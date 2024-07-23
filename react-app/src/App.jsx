@@ -30,9 +30,20 @@ function App() {
 
 
 
+  const [downloadMax, setDownloadMax] = useState(0)
+  const [minecraftLoad, setMinecraftLoad] = useState(0)
+
   useEffect(() => {
     socket.on('download', (data) => {
-      console.log('Сообщение от сервера:', data);
+      setDownloadMax(data.load);
+      setMinecraftLoad(data.all)
+
+      console.log("load " + data.load);
+      console.log("all " + data.all);
+    });
+
+    socket.on('finish', (data) => {
+      console.log("data " + data);
     });
 
     if (localStorage.getItem(KEY)) {
@@ -55,15 +66,15 @@ function App() {
   }, [])
 
 
-  const a = () => {
-    socket.emit("message", JSON.stringify({
-      username: "username",
-      password: "password",
-      root: "root",
-      version: "version",
-      type: "type",
-      memoryMax: "memoryMax",
-      memoryMin: "memoryMin"
+  const playing = () => {
+    socket.emit("game", JSON.stringify({
+      username: "KANTNOLI",
+      password: "",
+      root: "./Minecrarft",
+      version: chooseVersion.version,
+      type: chooseVersion.type,
+      memoryMax: "2",
+      memoryMin: "1"
     }));
   }
 
@@ -94,9 +105,11 @@ function App() {
       </section>
       <div className={style.statistic}>{`${chooseVersion.version}  ${chooseVersion.type}`}</div>
 
-      <button onClick={() => a()} style={{ color: downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "#07de2a" : "" }} className={style.game}>{downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "Играть" : "Загрузить"}</button>
+      <button onClick={() => playing()} style={{ color: downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "#07de2a" : "" }} className={style.game}>{downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "Играть" : `Загрузить ${(minecraftLoad * 100) / downloadMax}`}</button>
       {downloads.find((el) => el.type === chooseVersion.type && el.version === chooseVersion.version) ? "" :
-        <p className={style.loading}><p className={style.loading2}></p></p>}
+        <p className={style.loading}><p style={{
+          width: `${(minecraftLoad * 100) / downloadMax}%`
+        }} className={style.loading2}></p></p>}
 
 
       <a href="https://t.me/KANTNOLI">KANTNOLI</a>

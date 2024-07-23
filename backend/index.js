@@ -6,6 +6,7 @@ import pkg from "minecraft-launcher-core";
 const { Authenticator, Client } = pkg;
 
 const launcher = new Client();
+
 const port = process.env.PORT || 3001;
 
 const app = express();
@@ -24,38 +25,38 @@ server.listen(port, async () => {
 });
 
 io.on("connection", (socket) => {
-  console.log("Новое соединение WebSocket");
-
-  socket.on("message", (data) => {
+  socket.on("game", (data) => {
+    console.log(123);
     const { username, password, root, version, type, memoryMax, memoryMin } =
       JSON.parse(data);
 
-    console.log(username);
-    setInterval(() => {
-      socket.emit("download", "test");
-      console.log("Inter");
-    }, 1000);
+    let opts = {
+      authorization: Authenticator.getAuth("username", ""),
+      javaPath: "C:/Program Files/Java/jre1.8.0_51/bin/java.exe",
+      root: "./minecraft",
+      version: {
+        number: "1.5.2",
+        type: "release",
+      },
+      memory: {
+        max: "6G",
+        min: "4G",
+      },
+    };
 
-    // let opts = {
-    //   authorization: Authenticator.getAuth(username, password),
-    //   root: root,
-    //   version: {
-    //     number: version,
-    //     type: type,
-    //   },
-    //   memory: {
-    //     max: `${memoryMax}G`,
-    //     min: `${memoryMin}G`,
-    //   },
-    // };
+    launcher.launch(opts);
 
-    // launcher.launch(opts);
+    launcher.on("debug", (e) => console.log("Debug:", e));
+    launcher.on("data", (e) => console.log("Data:", e));
 
-    // launcher.on("debug", (e) => console.log(e));
-    // launcher.on("data", (e) => console.log(e));
-  });
+    launcher.on("progress", (data) => {
+      socket.emit("download", { load: data.task, all: data.total });
+      console.log("Progress:", data);
+    });
 
-  socket.on("disconnect", () => {
-    console.log("Соединение WebSocket закрыто");
+    // launcher.on("package-extract", (data) => {
+    //   socket.emit("finish", data);
+    //   console.log(e);
+    // });
   });
 });
