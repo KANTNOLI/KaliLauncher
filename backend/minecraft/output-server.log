@@ -1,0 +1,48 @@
+2024-07-24 15:45:22 [SERVER] [INFO] Starting integrated minecraft server version 1.5.2
+2024-07-24 15:45:22 [SERVER] [INFO] Generating keypair
+2024-07-24 15:45:22 [SERVER] [INFO] Converting map!
+2024-07-24 15:45:22 [SERVER] [INFO] Scanning folders...
+2024-07-24 15:45:22 [SERVER] [INFO] Total conversion count is 0
+2024-07-24 15:45:22 [SERVER] [INFO] Preparing start region for level 0
+2024-07-24 15:45:23 [SERVER] [INFO] Preparing spawn area: 25%
+2024-07-24 15:45:24 [SERVER] [INFO] Preparing spawn area: 57%
+2024-07-24 15:45:25 [SERVER] [INFO] Preparing spawn area: 96%
+2024-07-24 15:45:25 [SERVER] [INFO] KANTNOLI[/127.0.0.1:0] logged in with entity id 162 at (119.5, 64.0, 254.5)
+2024-07-24 15:45:29 [SERVER] [INFO] <KANTNOLI> asd
+2024-07-24 15:45:32 [SERVER] [INFO] Saving and pausing game...
+2024-07-24 15:45:32 [SERVER] [INFO] Saving chunks for level 'New World'/Overworld
+2024-07-24 15:45:34 [SERVER] [INFO] Saving chunks for level 'New World'/Nether
+2024-07-24 15:45:34 [SERVER] [INFO] Saving chunks for level 'New World'/The End
+2024-07-24 15:45:34 [SERVER] [WARNING] Can't keep up! Did the system time change, or is the server overloaded?
+2024-07-24 15:45:35 [SERVER] [INFO] Saving and pausing game...
+2024-07-24 15:45:35 [SERVER] [INFO] Saving chunks for level 'New World'/Overworld
+2024-07-24 15:45:36 [SERVER] [INFO] Saving chunks for level 'New World'/Nether
+2024-07-24 15:45:36 [SERVER] [INFO] Saving chunks for level 'New World'/The End
+2024-07-24 15:45:39 [SERVER] [INFO] Stopping server
+2024-07-24 15:45:39 [SERVER] [INFO] Saving players
+2024-07-24 17:51:20 [SERVER] [INFO] Starting integrated minecraft server version 1.5.2
+2024-07-24 17:51:20 [SERVER] [INFO] Generating keypair
+2024-07-24 17:51:21 [SERVER] [INFO] Preparing start region for level 0
+2024-07-24 17:51:21 [SERVER] [INFO] KANTNOLI[/127.0.0.1:0] logged in with entity id 418 at (118.99163735679197, 64.0, 258.00236065950605)
+2024-07-24 17:51:28 [SERVER] [INFO] Saving and pausing game...
+2024-07-24 17:51:28 [SERVER] [INFO] Saving chunks for level 'New World'/Overworld
+2024-07-24 17:51:28 [SERVER] [INFO] Saving chunks for level 'New World'/Nether
+2024-07-24 17:51:28 [SERVER] [INFO] Saving chunks for level 'New World'/The End
+2024-07-24 17:51:36 [SERVER] [INFO] Saving and pausing game...
+2024-07-24 17:51:36 [SERVER] [INFO] Saving chunks for level 'New World'/Overworld
+2024-07-24 17:51:36 [SERVER] [INFO] Saving chunks for level 'New World'/Nether
+2024-07-24 17:51:36 [SERVER] [INFO] Saving chunks for level 'New World'/The End
+2024-07-24 17:54:52 [SERVER] [INFO] Saving and pausing game...
+2024-07-24 17:54:52 [SERVER] [INFO] Saving chunks for level 'New World'/Overworld
+2024-07-24 17:54:52 [SERVER] [INFO] Saving chunks for level 'New World'/Nether
+2024-07-24 17:54:52 [SERVER] [INFO] Saving chunks for level 'New World'/The End
+2024-07-24 17:54:57 [SERVER] [INFO] Started on 0.0.0.0:64798
+2024-07-24 17:55:04 [SERVER] [INFO] [KANTNOLI: Set own game mode to Creative Mode]
+2024-07-24 17:57:46 [SERVER] [INFO] Stopping server
+2024-07-24 17:57:46 [SERVER] [INFO] Stopping server connection
+2024-07-24 17:57:46 [SERVER] [INFO] Saving players
+2024-07-24 17:57:46 [SERVER] [INFO] Closing listening thread
+2024-07-24 17:57:46 [SERVER] [INFO] Saving worlds
+2024-07-24 17:57:46 [SERVER] [INFO] Saving chunks for level 'New World'/Overworld
+2024-07-24 17:57:46 [SERVER] [INFO] Saving chunks for level 'New World'/Nether
+2024-07-24 17:57:46 [SERVER] [INFO] Saving chunks for level 'New World'/The End

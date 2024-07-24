@@ -26,17 +26,16 @@ server.listen(port, async () => {
 
 io.on("connection", (socket) => {
   socket.on("game", (data) => {
-    console.log(123);
     const { username, password, root, version, type, memoryMax, memoryMin } =
       JSON.parse(data);
 
     let opts = {
-      authorization: Authenticator.getAuth("username", ""),
+      authorization: Authenticator.getAuth(username, password),
       javaPath: "C:/Program Files/Java/jre1.8.0_51/bin/java.exe",
       root: "./minecraft",
       version: {
-        number: "1.5.2",
-        type: "release",
+        number: version,
+        type: type,
       },
       memory: {
         max: "6G",
@@ -50,8 +49,8 @@ io.on("connection", (socket) => {
     launcher.on("data", (e) => console.log("Data:", e));
 
     launcher.on("progress", (data) => {
-      socket.emit("download", { load: data.task, all: data.total });
-      console.log("Progress:", data);
+      socket.emit("download", data);
+      console.log(data);
     });
 
     // launcher.on("package-extract", (data) => {
